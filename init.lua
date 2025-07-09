@@ -1,3 +1,36 @@
+-- ~/.config/nvim/init.lua
+
+-- 获取用户的 home 目录
+local home = vim.fn.expand '~'
+
+-- 定义你希望添加到 PATH 的路径
+-- 确保这些路径是实际存在的，并且包含你需要的可执行文件
+local paths_to_add = {
+  home .. '/.ghcup/bin', -- Haskell GHCup 的路径
+  home .. '/.local/bin', -- 通常用于 pip install --user 的脚本
+  -- home .. '/.npm-global/bin', -- 如果你有全局 Node.js 包
+  -- /usr/local/bin', -- 如果某些工具安装在这里
+}
+
+-- 获取当前 Neovim 的 PATH 环境变量
+local current_nvim_path = vim.env.PATH or ''
+
+-- 将新路径添加到 PATH 的最前面，用冒号分隔
+for _, path in ipairs(paths_to_add) do
+  if not current_nvim_path:match(path) then -- 避免重复添加
+    current_nvim_path = path .. ':' .. current_nvim_path
+  end
+end
+
+-- 将修改后的 PATH 设置回 Neovim 的环境变量
+vim.env.PATH = current_nvim_path
+
+-- ... 接下来的代码才是你的插件管理器 lazy.nvim 的 setup
+-- 例如：
+-- require('lazy').setup({
+--   'neovim/nvim-lspconfig',
+--   -- ... 你的其他插件
+-- })
 --[[
 
 =====================================================================

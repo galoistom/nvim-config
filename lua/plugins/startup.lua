@@ -41,7 +41,8 @@ return {
     -- 'text': 显示文本 (可以包含图标)
     -- 'cmd': 执行的命令
     dashboard.section.buttons.val = {
-      dashboard.button('e', '  New File', ':ene<CR>'), -- 新建空文件
+      dashboard.button('n', '  New File', ':ene<CR>'), -- 新建空文件
+      dashboard.button('e', '  Exolore', ':Explore<CR>'), -- 新建空文件
       dashboard.button('f', '  Find File', ':Telescope find_files<CR>'), -- 查找文件 (需要 Telescope 插件)
       dashboard.button('r', '  Recent Files', ':Telescope oldfiles<CR>'), -- 最近文件 (需要 Telescope 插件)
       dashboard.button('c', '  Configuration', ':e ' .. vim.fn.stdpath 'config' .. '<CR>'), -- 打开 Neovim 配置目录
