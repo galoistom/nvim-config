@@ -6,7 +6,7 @@ map('n', '<leader>q', '<cmd>wq<CR>', { desc = 'quit' })
 map('n', '<leader>E', function()
   vim.cmd 'tabnew'
   vim.cmd 'Explore'
-end)
+end, { desc = 'Explore' })
 map('n', '<Tab>', '<cmd>bn<CR>', { desc = 'next buffer' })
 map('n', '<S-Tab>', '<cmd>bp<CR>', { desc = 'previous buffer' })
 map('n', '<leader>t', '<cmd>belowright term<CR>', { desc = 'terminal' })
