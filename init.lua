@@ -1056,7 +1056,7 @@ require('lazy').setup({
     },
   },
 })
-require 'custom.keymap'
+require 'keymap'
 --require 'custom.startup'
 --require 'custom.telescope'
 -- The line beneath this is called `modeline`. See `:help modeline`
