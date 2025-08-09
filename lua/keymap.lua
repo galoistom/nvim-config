@@ -28,7 +28,8 @@ end
 
 map('n', '<leader>w', '<C-w>', { desc = 'move focous' })
 map('n', '<leader>e', '<cmd>NERDTreeToggle %:p:h<CR>', { desc = 'nerdtree' })
-map('n', '<leader>q', '<cmd>wq<CR>', { desc = 'quit' })
+map('n', '<leader>Q', '<cmd>wq<CR>', { desc = 'save and quit' })
+map('n', '<leader>q', '<cmd>q<CR>', { desc = 'quit' })
 map('n', '<leader>E', function()
   vim.cmd 'tabnew'
   vim.cmd 'Explore'
