@@ -206,8 +206,19 @@ vim.o.confirm = true
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- Tab 键显示的宽度，通常设置为 2 或 4
+vim.opt.tabstop = 4
+
+-- 缩进的宽度，推荐和 tabstop 设置成一样
+vim.opt.shiftwidth = 4
+
+-- Tab 键是否插入空格（而非 Tab 字符）
+--vim.opt.expandtab = true
+
+-- 当你使用 backspace 删除时，一次删除多少空格
+vim.opt.softtabstop = 4
 -- Diagnostic keymaps
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+--vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
