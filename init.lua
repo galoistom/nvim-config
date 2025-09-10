@@ -790,16 +790,6 @@ require('lazy').setup({
     end,
   },
 
-  {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    opts = {},
-    config = function()
-      -- 直接执行你刚才创建的lualine.lua文件
-      require 'plugins.lualine'
-    end,
-  },
-
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
