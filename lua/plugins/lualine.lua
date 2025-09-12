@@ -101,8 +101,8 @@ local colors = {
         color = function()
           -- auto change color according to neovims mode
           local mode_color = {
-            n = colors.red,
-            i = colors.green,
+            n = colors.green,
+            i = colors.red,
             v = colors.blue,
             [''] = colors.blue,
             V = colors.blue,
