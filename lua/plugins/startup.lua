@@ -3,6 +3,9 @@
 return {
   'goolord/alpha-nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' }, -- 用于显示图标
+  event = 'VimEnter',
+  enabled = true,
+  init = false,
   config = function()
     local alpha = require 'alpha'
     local dashboard = require 'alpha.themes.dashboard'
@@ -39,6 +42,15 @@ return {
       dashboard.button('q', '  Quit Neovim', ':qa<CR>'), -- 退出 Neovim
     }
     dashboard.section.buttons.opts.hl = 'AlphaButtons' -- 设置高亮组
+    for _, button in ipairs(dashboard.section.buttons.val) do
+      button.opts.hl = 'AlphaButtons'
+      button.opts.hl_shortcut = 'AlphaShortcut'
+    end
+    dashboard.section.header.opts.hl = 'AlphaHeader'
+    dashboard.section.buttons.opts.hl = 'AlphaButtons'
+    dashboard.section.footer.opts.hl = 'AlphaFooter'
+    dashboard.opts.layout[1].val = 8
+    --      return dashboard
 
     -- =======================================
     -- 自定义 Footer (底部信息)
