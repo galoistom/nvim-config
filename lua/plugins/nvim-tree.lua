@@ -59,7 +59,6 @@ return {
     },
     config = function(_, opts)
       require('nvim-tree').setup(opts)
-      local api = require 'nvim-tree.api'
       -- 在 nvim-tree 窗口中配置快捷键
       vim.api.nvim_create_autocmd('FileType', {
         pattern = 'NvimTree',
