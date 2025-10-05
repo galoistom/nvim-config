@@ -37,7 +37,7 @@ return {
       dashboard.button('f', '  Find File', ':Telescope find_files<CR>'), -- 查找文件 (需要 Telescope 插件)
       dashboard.button('r', '  Recent Files', ':Telescope oldfiles<CR>'), -- 最近文件 (需要 Telescope 插件)
       dashboard.button('c', '  Configuration', ':NvimTreeOpen ' .. vim.fn.stdpath 'config' .. '<CR>'), -- 打开 Neovim 配置目录
-      dashboard.button('u', '  Update Plugins', ':Lazy sync<CR>'), -- 更新插件 (lazy.nvim)
+      dashboard.button('u', '  Update Plugins', ':Lazy<CR>'), -- 更新插件 (lazy.nvim)
       dashboard.button('m', '  Mason Setting', ':Mason<CR>'),
       dashboard.button('q', '  Quit Neovim', ':qa<CR>'), -- 退出 Neovim
     }
