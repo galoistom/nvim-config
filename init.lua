@@ -1,5 +1,5 @@
 -- ~/.config/nvim/init.lua
-
+--end
 -- 获取用户的 home 目录
 local home = vim.fn.expand '~'
 
