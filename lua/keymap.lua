@@ -1,10 +1,10 @@
 local map = vim.keymap.set
-
 --map('n', '<leader>w', '<C-w>', { desc = 'move focous' })
 --map('n', '<leader>e', '<cmd>NERDTreeToggle %:p:h<CR>', { desc = 'nerdtree' })
 map('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', { noremap = true, silent = true, desc = 'nerdtree' })
 map('n', '<leader>Q', '<cmd>wq<CR>', { desc = 'save and quit' })
 map('n', '<leader>q', '<cmd>q<CR>', { desc = 'quit' })
+map('i', '<C-s>', '<Esc>:w<CR>', { desc = 'save' })
 --map('n', '<leader>E', function()
 --  vim.cmd 'tabnew'
 --  vim.cmd 'Explore'
