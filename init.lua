@@ -411,7 +411,7 @@ require('lazy').setup({
 
       -- Document existing key chains
       spec = {
-        { '<leader>f', group = '[F]uzzy search' },
+        { '<leader>j', group = '[F]uzzy search' },
         { '<leader>t', group = '[T]oggle' },
         { '<leader>H', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
@@ -453,7 +453,14 @@ require('lazy').setup({
       { 'j-hui/fidget.nvim', opts = {} },
 
       -- Allows extra capabilities provided by blink.cmp
-      'saghen/blink.cmp',
+      --'saghen/blink.cmp',
+      {
+        'saghen/blink.cmp',
+        dependencies = { 'saghen/blink.lib' },
+        -- 强烈建议加上下面这一行，使用预构建的二进制文件
+        -- 否则你可能需要配置 Rust 环境来手动编译它
+        version = '*',
+      },
     },
     config = function()
       -- Brief aside: **What is LSP?**
@@ -705,7 +712,7 @@ require('lazy').setup({
     cmd = { 'ConformInfo' },
     keys = {
       {
-        '<leader>F',
+        '<leader>tj',
         function()
           require('conform').format { async = true, lsp_format = 'fallback' }
         end,
@@ -746,6 +753,7 @@ require('lazy').setup({
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     'folke/tokyonight.nvim',
+    --    'Mofiqul/dracula.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
       ---@diagnostic disable-next-line: missing-fields
@@ -760,6 +768,7 @@ require('lazy').setup({
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
       vim.cmd.colorscheme 'tokyonight-night'
+      --vim.cmd.colorscheme 'dracula'
     end,
   },
 
